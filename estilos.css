@@ -1,0 +1,9 @@
+div {
+    width: 100px; /* Ajusta el tamaño de tu elemento según sea necesario */
+    height: 100px; /* Ajusta el tamaño de tu elemento según sea necesario */
+    background-color: rgb(224, 42, 42); /* Solo para demostración */
+    cursor: url("img/apuntar.png"), auto; /* Cambia el puntero a tu imagen y luego al puntero predeterminado */
+}
+ body {
+     cursor: url("img/apuntar.png")
+ }
