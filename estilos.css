@@ -1,5 +1,41 @@
 
 /* cursor: url("img/apuntar.png"), auto;  cutsor*/
  body {
-    background-color: rgb(255, 221, 221);
+    background-color: rgb(58, 12, 122);
+    display:grid;
+ 
+ }
+
+ #todo{
+   display: grid;
+   height: 100%;
+   justify-content: center;
+
+ }
+
+
+ #start img{
+   width: 200px;
+
+ }
+
+ #start{
+      cursor:grab;
+ }
+
+
+  #opciones {
+     display: none;
+     gap: 2em;
+  }
+
+ .opcion{
+   background-color: gray;
+   border: solid  black 3px;
+   font-size: 3em;
+   border-radius: 50%;
+   padding: 1em;
+ }
+ .opcion:hover{
+   background-color: blue;
  }
