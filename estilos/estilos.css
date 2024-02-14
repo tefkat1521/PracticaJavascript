@@ -39,3 +39,8 @@
  .opcion:hover{
    background-color: blue;
  }
+
+a {
+  /* Resetear todos los atributos */
+  all: unset;
+}
