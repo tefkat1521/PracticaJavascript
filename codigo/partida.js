@@ -1,10 +1,31 @@
-function tal(veces) {
-    $(document).ready(function () {
-        // Función para establecer la posición inicial aleatoria de la imagen
-        $("#enemigo").width(Math.random() * 700); // Ponemos un tamaño aleatorio
+$(document).ready(function () {
+    var puntuacion = 0; // Inicializamos la puntuación
 
+    // Escuchamos el evento de clic en la imagen
+    $("#enemigo").on("click", function () {
+        // Cambiar el cursor al cursor de disparo
+        $("#contenedorPartida").css("cursor", 'url("img/disparo.png") 16 16, auto');
+
+        // Incrementar la puntuación después de 1 milisegundo
+        setTimeout(function () {
+            puntuacion++;
+            // Actualizar la puntuación en el HTML
+            $("#puntuacion").text("Puntuación: " + puntuacion);
+
+            // Restaurar el cursor después de 1 milisegundo
+            setTimeout(function () {
+                $("#contenedorPartida").css("cursor", 'url("img/puntero.png") 16 16, auto');
+            }, 100);
+        }, 100);
+    });
+
+    function finalizar(puntuacion) {
+        alert("Tu puntuación es: " + puntuacion);
+    }
+
+    function tal(veces) {
+        // Función para establecer la posición inicial aleatoria de la imagen
         function setInitialPosition() {
-            $("#enemigo").width(Math.random() * 700);
             var $enemigo = $("#enemigo");
             var windowWidth = $(window).width();
             var windowHeight = $(window).height();
@@ -53,7 +74,7 @@ function tal(veces) {
                     break;
             }
 
-            var segundos = Math.random() * 4000;
+            var segundos = Math.random() * 1000 + 500;
 
             // Animar la imagen hacia la posición calculada
             $enemigo.animate({
@@ -67,6 +88,8 @@ function tal(veces) {
                 if (veces > 1) {
                     veces--;
                     moveImageOut();
+                } else {
+                    finalizar(puntuacion);
                 }
             });
         }
@@ -76,30 +99,15 @@ function tal(veces) {
 
         // Llamar a moveImageOut() para iniciar el movimiento
         moveImageOut();
+    }
+    tal(10);
+    $(document).ready(function () {
+        $("#enemigo").on('mousedown', function (e) {
+            e.preventDefault(); // Evitar que el evento predeterminado se active (arrastrar la imagen)
+        });
     });
-}
 
-// Llamar a tal() para que se ejecute 5 veces
-tal(5);
-
-$(document).ready(function () {
-    var puntuacion = 0; // Inicializamos la puntuación
-
-    // Escuchamos el evento de clic en la imagen
-    $("#enemigo").on("click", function () {
-        // Cambiar el cursor al cursor de disparo
-        $("#contenedorPartida").css("cursor", 'url("img/disparo.png") 16 16, auto');
-
-        // Incrementar la puntuación después de 1 milisegundo
-        setTimeout(function () {
-            puntuacion++;
-            // Actualizar la puntuación en el HTML
-            $("#puntuacion").text("Puntuación: " + puntuacion);
-        }, 1);
-
-        // Restaurar el cursor después de 1 segundo
-        setTimeout(function () {
-            $("#contenedorPartida").css("cursor", 'url("img/puntero.png") 16 16, auto');
-        }, 200); // 1000 milisegundos = 1 segundo
-    });
+    // Llamar a tal() para que se ejecute 10 veces
+   
 });
+
