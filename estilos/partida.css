@@ -1,32 +1,51 @@
 #contenedorPartida {
-    position:fixed;
-        display: grid;
-        height: 100%;
-        justify-content: center;
-        background-color: aqua;
-        border: solid 2px blue;
-        border-radius: 5%;
-        width: 99%;
-        height: 99%;
-        overflow: hidden;
-        cursor: url("../img/puntero.png")16 16, auto;
-        box-sizing: border-box;
-        -webkit-user-select: none; /* Safari */
-        -moz-user-select: none; /* Firefox */
-        -ms-user-select: none; /* Internet Explorer */
-        user-select: none; /* estándar */
-    }
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80%;
+    width: 80%;
+    max-width: 800px;
+    background-color: #0d47a1;
+    /* Azul oscuro */
+    border: 3px solid #1976d2;
+    /* Azul */
+    border-radius: 30px;
+    padding: 40px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    cursor: url("../img/puntero.png"), auto;
+    -webkit-user-select: none;
+    /* Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer */
+    user-select: none;
+    /* Estándar */
+}
 
-        
-
-#enemigo{
+#enemigo {
     position: absolute;
     -webkit-user-select: none;
-        /* Safari */
-        -moz-user-select: none;
-        /* Firefox */
-        -ms-user-select: none;
-        /* Internet Explorer */
-        user-select: none;
-        /* estándar */
+    /* Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer */
+    user-select: none;
+    /* Estándar */
 }
+
+#puntuacion {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #1565c0;
+    /* Azul */
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 15px;
+    font-size: 24px;
+}
+

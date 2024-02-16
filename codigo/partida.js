@@ -27,14 +27,15 @@ $(document).ready(function () {
         // Función para establecer la posición inicial aleatoria de la imagen
         function setInitialPosition() {
             var $enemigo = $("#enemigo");
-            var windowWidth = $(window).width();
-            var windowHeight = $(window).height();
+            var $contenedorPartida = $("#contenedorPartida");
+            var contenedorWidth = $contenedorPartida.width();
+            var contenedorHeight = $contenedorPartida.height();
             var imageWidth = $enemigo.width();
             var imageHeight = $enemigo.height();
 
             // Generar posiciones aleatorias en ambos ejes
-            var randomLeft = Math.random() * (windowWidth - imageWidth);
-            var randomTop = Math.random() * (windowHeight - imageHeight);
+            var randomLeft = Math.random() * (contenedorWidth - imageWidth);
+            var randomTop = Math.random() * (contenedorHeight - imageHeight);
 
             // Establecer la posición inicial aleatoria
             $enemigo.css({
@@ -43,34 +44,35 @@ $(document).ready(function () {
             });
         }
 
-        // Función para mover la imagen fuera de la pantalla
+        // Función para mover la imagen fuera del contenedor
         function moveImageOut() {
             var $enemigo = $("#enemigo");
-            var windowWidth = $(window).width();
-            var windowHeight = $(window).height();
+            var $contenedorPartida = $("#contenedorPartida");
+            var contenedorWidth = $contenedorPartida.width();
+            var contenedorHeight = $contenedorPartida.height();
             var imageWidth = $enemigo.width();
             var imageHeight = $enemigo.height();
 
-            // Establecer la posición fuera de la pantalla en un lado aleatorio
+            // Establecer la posición fuera del contenedor en un lado aleatorio
             var side = Math.floor(Math.random() * 4); // 0: arriba, 1: derecha, 2: abajo, 3: izquierda
             var left, top;
 
             switch (side) {
                 case 0: // arriba
-                    left = Math.random() * (windowWidth - imageWidth);
+                    left = Math.random() * (contenedorWidth - imageWidth);
                     top = -imageHeight;
                     break;
                 case 1: // derecha
-                    left = windowWidth;
-                    top = Math.random() * (windowHeight - imageHeight);
+                    left = contenedorWidth;
+                    top = Math.random() * (contenedorHeight - imageHeight);
                     break;
                 case 2: // abajo
-                    left = Math.random() * (windowWidth - imageWidth);
-                    top = windowHeight;
+                    left = Math.random() * (contenedorWidth - imageWidth);
+                    top = contenedorHeight;
                     break;
                 case 3: // izquierda
                     left = -imageWidth;
-                    top = Math.random() * (windowHeight - imageHeight);
+                    top = Math.random() * (contenedorHeight - imageHeight);
                     break;
             }
 
@@ -100,14 +102,12 @@ $(document).ready(function () {
         // Llamar a moveImageOut() para iniciar el movimiento
         moveImageOut();
     }
-    tal(10);
-    $(document).ready(function () {
-        $("#enemigo").on('mousedown', function (e) {
-            e.preventDefault(); // Evitar que el evento predeterminado se active (arrastrar la imagen)
-        });
-    });
 
     // Llamar a tal() para que se ejecute 10 veces
-   
-});
+    tal(10);
 
+    // Evitar el arrastre de la imagen al mantener pulsado
+    $("#enemigo").on('mousedown', function (e) {
+        e.preventDefault();
+    });
+});
