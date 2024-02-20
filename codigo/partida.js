@@ -26,10 +26,13 @@ $(document).ready(function () {
     function tal(veces) {
         // Función para establecer la posición inicial aleatoria de la imagen
         function setInitialPosition() {
+            var anchoAleatorio = Math.floor(Math.random() * 100) + 50;
             var $enemigo = $("#enemigo");
             var $contenedorPartida = $("#contenedorPartida");
             var contenedorWidth = $contenedorPartida.width();
             var contenedorHeight = $contenedorPartida.height();
+            $("#enemigo").width(anchoAleatorio);
+            $("#enemigo").height(anchoAleatorio);
             var imageWidth = $enemigo.width();
             var imageHeight = $enemigo.height();
 
