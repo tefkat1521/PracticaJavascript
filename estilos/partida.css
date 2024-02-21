@@ -49,3 +49,6 @@
     font-size: 24px;
 }
 
+#enemigo{
+    display: none;
+}
