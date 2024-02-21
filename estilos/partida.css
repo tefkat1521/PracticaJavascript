@@ -17,7 +17,7 @@
     /* Usando unidades de relleno relativas */
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
     overflow: hidden;
-    cursor: url("../img/puntero.png"), auto;
+    cursor: url("../img/puntero.png")16 16, auto;
     user-select: none;
     /* Estándar */
 }
@@ -28,40 +28,38 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    width: 200px;
 }
 
 #puntuacion {
     position: fixed;
-    top: 2vh;
+    top: 2em;
     /* Usando unidades de altura relativa */
-    right: 2vw;
+    right: 2em;
     /* Usando unidades de ancho relativa */
     background-color: #64b5f6;
     /* Azul claro */
     color: #fff;
-    padding: 1vh 2vw;
+    padding: 1em 1em;
     /* Usando unidades de relleno relativas */
     border-radius: 15px;
-    font-size: 2vw;
     /* Usando unidades de tamaño de fuente relativas */
 }
 
 #cambio {
     position: fixed;
-    top: 5vh;
+    top: 8em;
     /* Usando unidades de altura relativa */
-    right: 2vw;
+    right: 2em;
     /* Usando unidades de ancho relativa */
     background-color: #64b5f6;
     /* Azul claro */
     color: #fff;
-    padding: 1vh 2vw;
+    padding: 1em 2em;
     /* Usando unidades de relleno relativas */
     border-radius: 15px;
-    font-size: 2vw;
-    /* Usando unidades de tamaño de fuente relativas */
 }
 
-#enemigo {
-    display: none;
+#botonIniciar{
+    align-self: flex-start;
 }

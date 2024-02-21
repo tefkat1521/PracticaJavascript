@@ -67,7 +67,7 @@ function ejecutar() {
                         var contenedorHeight = $contenedorPartida.height();
 
                         $("#enemigo").width(numAleatorio);
-                        $("#enemigo").height(numAleatorio);
+                        // $("#enemigo").height(numAleatorio);
 
                         var imageWidth = $enemigo.width();
                         var imageHeight = $enemigo.height();
