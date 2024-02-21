@@ -3,24 +3,21 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 80%;
-    width: 80%;
+    height: 80vh;
+    /* Usando unidades de altura relativa */
+    width: 80vw;
+    /* Usando unidades de ancho relativa */
     max-width: 800px;
-    background-color: #0d47a1;
-    /* Azul oscuro */
-    border: 3px solid #1976d2;
-    /* Azul */
+    background-color: #ffcc80;
+    /* Amarillo claro */
+    border: 3px solid #ff5722;
+    /* Naranja */
     border-radius: 30px;
-    padding: 40px;
+    padding: 4vw;
+    /* Usando unidades de relleno relativas */
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
     overflow: hidden;
     cursor: url("../img/puntero.png"), auto;
-    -webkit-user-select: none;
-    /* Safari */
-    -moz-user-select: none;
-    /* Firefox */
-    -ms-user-select: none;
-    /* Internet Explorer */
     user-select: none;
     /* Estándar */
 }
@@ -28,39 +25,43 @@
 #enemigo {
     position: absolute;
     -webkit-user-select: none;
-    /* Safari */
     -moz-user-select: none;
-    /* Firefox */
     -ms-user-select: none;
-    /* Internet Explorer */
     user-select: none;
-    /* Estándar */
 }
 
 #puntuacion {
     position: fixed;
-    top: 20px;
-    right: 20px;
-    background-color: #1565c0;
-    /* Azul */
+    top: 2vh;
+    /* Usando unidades de altura relativa */
+    right: 2vw;
+    /* Usando unidades de ancho relativa */
+    background-color: #64b5f6;
+    /* Azul claro */
     color: #fff;
-    padding: 10px 20px;
+    padding: 1vh 2vw;
+    /* Usando unidades de relleno relativas */
     border-radius: 15px;
-    font-size: 24px;
+    font-size: 2vw;
+    /* Usando unidades de tamaño de fuente relativas */
 }
 
 #cambio {
     position: fixed;
-    top: 5em;
-    right: 2em;
-    background-color: #1565c0;
-    /* Azul */
+    top: 5vh;
+    /* Usando unidades de altura relativa */
+    right: 2vw;
+    /* Usando unidades de ancho relativa */
+    background-color: #64b5f6;
+    /* Azul claro */
     color: #fff;
-    padding: 10px 20px;
+    padding: 1vh 2vw;
+    /* Usando unidades de relleno relativas */
     border-radius: 15px;
-    font-size: 24px;
+    font-size: 2vw;
+    /* Usando unidades de tamaño de fuente relativas */
 }
 
-#enemigo{
+#enemigo {
     display: none;
 }

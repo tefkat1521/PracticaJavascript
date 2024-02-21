@@ -1,7 +1,7 @@
 var arrayEnemigos = ["img/enemigo1.png", "img/enemigo2.webp", "img/enemigo3.webp"];
 
 function ejecutar() {
-        
+    $("#enemigo").css("display","none");
     $(document).ready(function () {
         // Función para contar hacia atrás desde un número dado y mostrar el contador en pantalla
         $("#botonIniciar").css("display","none");
@@ -22,6 +22,7 @@ function ejecutar() {
         }
         // Llamada a la función countdown antes de ejecutar el código principal
         countdown(3).then(() => {
+            $("#enemigo").css("display", "block");
             $(document).ready(function () {
                 var puntuacion = 0; // Inicializamos la puntuación
 
