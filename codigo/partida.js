@@ -18,7 +18,6 @@ $(document).ready(function () {
 
     // Llamada a la función countdown antes de ejecutar el código principal
     countdown(3).then(() => {
-        // Tu código principal aquí
         $(document).ready(function () {
             var puntuacion = 0; // Inicializamos la puntuación
 
@@ -26,37 +25,45 @@ $(document).ready(function () {
             $("#enemigo").on("click", function () {
                 // Cambiar el cursor al cursor de disparo
                 $("#contenedorPartida").css("cursor", 'url("img/disparo.png") 16 16, auto');
+                //Vaciamos el texto del contador cuándo el usuario pulse por primera vez
                 $("#contador").text(" ");
 
-                // Incrementar la puntuación después de 1 milisegundo
+                // Incrementar la puntuación
                 setTimeout(function () {
                     puntuacion++;
                     // Actualizar la puntuación en el HTML
                     $("#puntuacion").text("Puntuación: " + puntuacion);
 
-                    // Restaurar el cursor después de 1 milisegundo
+                    // Restaurar el cursor al de apuntar
                     setTimeout(function () {
                         $("#contenedorPartida").css("cursor", 'url("img/puntero.png") 16 16, auto');
-                    }, 100);
+                    }, 1);
                 }, 100);
             });
 
+            //Al finalizar
             function finalizar(puntuacion) {
+                //Ocultamos el enemigo
                 $("#enemigo").css("display", "none");
+                //Enseñamos la puntuación al finalizar
                 $("#contenedorPartida").text("Tu puntuación es: "+ puntuacion);
             }
 
             function tal(veces) {
-                // Función para establecer la posición inicial aleatoria de la imagen
+                // Función para establecer la posición aleatoria y tamaño principal de la imagen
                 function setInitialPosition() {
                     $("#enemigo").css("display","block");
-                    var anchoAleatorio = Math.floor(Math.random() * 100) + 50;//Tamaño aleatorio
+                    var numAleatorio = Math.floor(Math.random() * 100) + 50;//Tamaño aleatorio
+
                     var $enemigo = $("#enemigo");
                     var $contenedorPartida = $("#contenedorPartida");
+
                     var contenedorWidth = $contenedorPartida.width();
                     var contenedorHeight = $contenedorPartida.height();
-                    $("#enemigo").width(anchoAleatorio);
-                    $("#enemigo").height(anchoAleatorio);
+
+                    $("#enemigo").width(numAleatorio);
+                    $("#enemigo").height(numAleatorio);
+
                     var imageWidth = $enemigo.width();
                     var imageHeight = $enemigo.height();
 
