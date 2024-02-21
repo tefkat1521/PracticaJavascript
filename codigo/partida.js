@@ -151,3 +151,21 @@ $(document).ready(function () {
 
    
 });
+
+class Enemigo extends HTMLElement {
+    constructor() {
+        super();
+    }
+
+    connectedCallback() {
+        const enemigoImg = document.getElementById('enemigo');
+        const button = document.createElement('button');
+        button.textContent = 'Cambiar Imagen';
+        button.addEventListener('click', () => {
+            enemigoImg.src = '../img/start.png';
+        });
+        this.appendChild(button);
+    }
+}
+
+window.customElements.define("cambiar-enemigo", Enemigo);
