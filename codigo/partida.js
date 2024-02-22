@@ -170,7 +170,7 @@ class Enemigo extends HTMLElement {
         button.textContent = 'Cambiar enemigo';
         button.addEventListener('click', () => {
             enemigoImg.src = arrayEnemigos[contador];
-            if (contador >= 2) {
+            if (contador >= arrayEnemigos.length - 1) {
                 contador = 0;
             }else{
                 contador++;
