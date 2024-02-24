@@ -1,4 +1,6 @@
 var arrayEnemigos = ["img/enemigo1.png", "img/enemigo2.webp", "img/enemigo3.webp"];
+var arrayPistas = ["img/batalla1.png", "img/batalla2.jpg", "img/batalla3.webp"];
+var arrayPunteros= ["img/puntero1.png", "img/puntero2.jpg", "img/puntero3.webp"];
 
 function ejecutar() {
     $("#enemigo").css("display","none");
@@ -41,7 +43,7 @@ function ejecutar() {
 
                         // Restaurar el cursor al de apuntar
                         setTimeout(function () {
-                            $("#contenedorPartida").css("cursor", 'url("img/puntero.png") 16 16, auto');
+                            $("#contenedorPartida").css("cursor", 'url("img/puntero1.png") 16 16, auto');
                         }, 1);
                     }, 100);
                 });
@@ -165,11 +167,13 @@ class Enemigo extends HTMLElement {
     connectedCallback() {
         let contador = 1;
         const enemigoImg = document.getElementById('enemigo');
+        
         // this.appendChild(enemigoImg);
         const button = document.createElement('button');
         button.textContent = 'Cambiar enemigo';
         button.addEventListener('click', () => {
             enemigoImg.src = arrayEnemigos[contador];
+            $("#contenedorPartida").css("background-image", "url('" + arrayPistas[contador ]+"')");
             if (contador >= arrayEnemigos.length - 1) {
                 contador = 0;
             }else{

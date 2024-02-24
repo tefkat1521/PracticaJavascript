@@ -9,6 +9,10 @@
     /* Usando unidades de ancho relativa */
     max-width: 800px;
     background-color: #ffcc80;
+    background-image: url("../img/batalla1.png");
+    /* background-size: contain; */
+    background-repeat: no-repeat;
+    background-size: cover;
     /* Amarillo claro */
     border: 3px solid #ff5722;
     /* Naranja */
@@ -17,7 +21,7 @@
     /* Usando unidades de relleno relativas */
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
     overflow: hidden;
-    cursor: url("../img/puntero.png")16 16, auto;
+    cursor: url("../img/puntero1.png")16 16, auto;
     user-select: none;
     /* Estándar */
 }
