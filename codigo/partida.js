@@ -1,6 +1,5 @@
 var arrayEnemigos = ["img/enemigo1.png", "img/enemigo2.webp", "img/enemigo3.webp"];
-var arrayPistas = ["img/batalla1.png", "img/batalla2.jpg", "img/batalla3.webp"];
-var arrayPunteros= ["img/puntero1.png", "img/puntero2.jpg", "img/puntero3.webp"];
+var arrayPistas = ["img/batalla1.png", "img/batalla2.jpg", "img/batalla3.jpg"];
 
 function ejecutar() {
     $("#enemigo").css("display","none");
@@ -32,6 +31,7 @@ function ejecutar() {
                 $("#enemigo").on("click", function () {
                     // Cambiar el cursor al cursor de disparo
                     $("#contenedorPartida").css("cursor", 'url("img/disparo.png") 16 16, auto');
+
                     //Vaciamos el texto del contador cuándo el usuario pulse por primera vez
                     $("#contador").text(" ");
 
@@ -53,7 +53,9 @@ function ejecutar() {
                     //Ocultamos el enemigo
                     $("#enemigo").css("display", "none");
                     //Enseñamos la puntuación al finalizar
-                    $("#contenedorPartida").text("Tu puntuación es: "+ puntuacion);
+                    $("#contenedorPartida").html("Tu puntuación es: " + puntuacion + '<a href="partida.html" class="botonEstilo"><button>Volver a jugar</button></a>');
+
+
                 }
 
                 function tal(veces) {
@@ -171,6 +173,7 @@ class Enemigo extends HTMLElement {
         // this.appendChild(enemigoImg);
         const button = document.createElement('button');
         button.textContent = 'Cambiar enemigo';
+        button.classList.add("botonEstilo");
         button.addEventListener('click', () => {
             enemigoImg.src = arrayEnemigos[contador];
             $("#contenedorPartida").css("background-image", "url('" + arrayPistas[contador ]+"')");

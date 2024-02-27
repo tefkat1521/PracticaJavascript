@@ -23,7 +23,7 @@
     overflow: hidden;
     cursor: url("../img/puntero1.png")16 16, auto;
     user-select: none;
-    /* Estándar */
+    /* Estándar*/
 }
 
 #enemigo {
@@ -54,16 +54,19 @@
     position: fixed;
     top: 8em;
     /* Usando unidades de altura relativa */
-    right: 2em;
+    right: 1em;
     /* Usando unidades de ancho relativa */
     background-color: #64b5f6;
     /* Azul claro */
     color: #fff;
-    padding: 1em 2em;
     /* Usando unidades de relleno relativas */
     border-radius: 15px;
 }
 
 #botonIniciar{
     align-self: flex-start;
+}
+
+#reiniciar{
+    display: none;
 }

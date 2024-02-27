@@ -1,15 +1,17 @@
-
 body {
-  background-color: #212121;
+  background-color: #0d47a1;
+  /* Cambio de color de fondo */
   background-image: url("../img/fondo.jpg");
+  /* Ruta de la imagen sin cambios */
   background-repeat: no-repeat;
-    background-size: cover;
+  background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: Arial, sans-serif;
+  /* Cambio de fuente */
   color: #fff;
 }
 
@@ -26,8 +28,9 @@ body {
   border-radius: 50%;
   overflow: hidden;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-  background-color: aqua; 
-  padding:1em;
+  background-color: #ff5722;
+  /* Cambio de color de fondo */
+  padding: 1em;
 }
 
 #start:hover {
@@ -47,7 +50,8 @@ body {
 }
 
 .opcion {
-  background-color: #757575;
+  background-color: #d32f2f;
+  /* Cambio de color de fondo */
   border: 3px solid #fff;
   border-radius: 50%;
   font-size: 2em;
@@ -58,14 +62,45 @@ body {
 }
 
 .opcion:hover {
-  background-color: aqua;
+  background-color: #4caf50;
+  /* Cambio de color de fondo al pasar el ratón */
   transform: scale(1.1);
 }
 
 .opcion:active {
   transform: scale(0.9);
 }
+
 a {
-  /* Resetear todos los atributos */
   all: unset;
+}
+
+button{
+  all: unset;
+}
+
+
+/* Estilos para el botón */
+.botonEstilo {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  /* Color de fondo */
+  color: white;
+  /* Color del texto */
+  border: none;
+  border-radius: 5px;
+  /* Bordes redondeados */
+  cursor: pointer;
+}
+
+/* Estilos cuando el cursor está sobre el botón */
+.botonEstilo:hover {
+  background-color: #45a049;
+  /* Cambio de color de fondo al pasar el cursor */
+}
+
+/* Estilos cuando el botón está presionado */
+.botonEstilo:active {
+  background-color: #3e8e41;
+  /* Cambio de color de fondo al hacer clic */
 }

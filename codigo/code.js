@@ -9,7 +9,6 @@ $(document).ready(function(){
 });
 
 
-
 // class Enemigo extends HTMLElement{
 //     constructor(){
 //         super();
