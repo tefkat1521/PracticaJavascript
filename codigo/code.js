@@ -1,22 +1,7 @@
-$(document).ready(function(){
-    $("#start").click(function(){
-        $("#start").css("display", "none");
-        $("#opciones").fadeIn(1000);
-        $("#opciones").css("display", "grid");
-    })
-
-      
+$(document).ready(function(){//Usamos jquery para indicar que se ejecute el código cuándo se cargue toda la página.
+    $("#start").click(function(){//Cuándo pulsemos el elemento con id start se ejecuta
+        $("#start").css("display", "none");//Se oculta el elemento
+        $("#opciones").fadeIn(1000);//Aparecen los elementos con id opciones de manera lenta
+        $("#opciones").css("display", "grid");//ponemos display grid al mismo tiempo
+    })   
 });
-
-
-// class Enemigo extends HTMLElement{
-//     constructor(){
-//         super();
-//     }
-//     connectedCallback(){
-//         this.innerHTML = "Hola ";
-//         this.style.color = "red";
-//     }
-// }
-
-// window.customElements.define("enemigo-aparecer", Enemigo);

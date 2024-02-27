@@ -1,21 +1,20 @@
-var arrayEnemigos = ["img/enemigo1.png", "img/enemigo2.webp", "img/enemigo3.webp"];
-var arrayPistas = ["img/batalla1.png", "img/batalla2.jpg", "img/batalla3.jpg"];
+var arrayEnemigos = ["img/enemigo1.png", "img/enemigo2.webp", "img/enemigo3.webp"];//Un array con las imágenes de los enemigos
+var arrayPistas = ["img/batalla1.png", "img/batalla2.jpg", "img/batalla3.jpg"];//Array con las imagenes de fondo
 
-function ejecutar() {
-    $("#enemigo").css("display","none");
+function ejecutar() {//Se inicia cuándo se pulsa el botón iniciar
+    $("#enemigo").css("display","none");//Se oculta el enemigo para mostrar el contador hacia atrás
     $(document).ready(function () {
-        // Función para contar hacia atrás desde un número dado y mostrar el contador en pantalla
-        $("#botonIniciar").css("display","none");
-        function countdown(seconds) {
+        $("#botonIniciar").css("display","none");//Se oculta el botón para iniciar la partida.
+        function countdown(seconds) {//Se crea una función al que se le pasa un segundo como parámetro
             return new Promise((resolve, reject) => {
                 let count = seconds;
-                const interval = setInterval(() => {
-                    if (count > 0) {
+                const interval = setInterval(() => {//Setinterval 
+                    if (count > 0) {//Si el contador es mayor que 0
                         $("#contador").text(count);
-                        count--;
-                    } else {
+                        count--;//Se resta uno
+                    } else {//Si no, aparece el mensaje Dispara!
                         $("#contador").text("¡Dispara!");
-                        clearInterval(interval);
+                        clearInterval(interval);//Limpiamos el intervalo
                         resolve();
                     }
                 }, 1000);
@@ -27,22 +26,19 @@ function ejecutar() {
             $(document).ready(function () {
                 var puntuacion = 0; // Inicializamos la puntuación
 
-                // Escuchamos el evento de clic en la imagen
-                $("#enemigo").on("click", function () {
+                $("#enemigo").on("click", function () {//Cuándo se haga clic en la imagen(enemigo)
                     // Cambiar el cursor al cursor de disparo
                     $("#contenedorPartida").css("cursor", 'url("img/disparo.png") 16 16, auto');
-
                     //Vaciamos el texto del contador cuándo el usuario pulse por primera vez
-                    $("#contador").text(" ");
 
-                    // Incrementar la puntuación
-                    setTimeout(function () {
+                    $("#contador").text(" ");
+                    setTimeout(function () {//setTimeout que incrementa la puntuación
                         puntuacion++;
                         // Actualizar la puntuación en el HTML
                         $("#puntuacion").text("Puntuación: " + puntuacion);
 
-                        // Restaurar el cursor al de apuntar
-                        setTimeout(function () {
+ 
+                        setTimeout(function () {//setTimeOut que restaura el contador
                             $("#contenedorPartida").css("cursor", 'url("img/puntero1.png") 16 16, auto');
                         }, 1);
                     }, 100);
@@ -59,9 +55,9 @@ function ejecutar() {
                 }
 
                 function tal(veces) {
-                    // Función para establecer la posición aleatoria y tamaño principal de la imagen
+                    // Función para establecer la posición aleatoria y tamaño principal del enemigo con parámetro de las veces que se vaya a ejecutar
                     function setInitialPosition() {
-                        $("#enemigo").css("display","block");
+                        $("#enemigo").css("display","block");//Mostramos el enemigo por si no estuviese visible
                         var numAleatorio = Math.floor(Math.random() * 100) + 50;//Tamaño aleatorio
 
                         var $enemigo = $("#enemigo");
@@ -70,8 +66,7 @@ function ejecutar() {
                         var contenedorWidth = $contenedorPartida.width();
                         var contenedorHeight = $contenedorPartida.height();
 
-                        $("#enemigo").width(numAleatorio);
-                        // $("#enemigo").height(numAleatorio);
+                        $("#enemigo").width(numAleatorio);//Indicamos un tamaño aleatorio
 
                         var imageWidth = $enemigo.width();
                         var imageHeight = $enemigo.height();
@@ -101,19 +96,19 @@ function ejecutar() {
                         var left, top;
 
                         switch (side) {
-                            case 0: // arriba
+                            case 0:
                                 left = Math.random() * (contenedorWidth - imageWidth);
                                 top = -imageHeight;
                                 break;
-                            case 1: // derecha
+                            case 1: 
                                 left = contenedorWidth;
                                 top = Math.random() * (contenedorHeight - imageHeight);
                                 break;
-                            case 2: // abajo
+                            case 2:
                                 left = Math.random() * (contenedorWidth - imageWidth);
                                 top = contenedorHeight;
                                 break;
-                            case 3: // izquierda
+                            case 3: 
                                 left = -imageWidth;
                                 top = Math.random() * (contenedorHeight - imageHeight);
                                 break;
@@ -170,7 +165,6 @@ class Enemigo extends HTMLElement {
         let contador = 1;
         const enemigoImg = document.getElementById('enemigo');
         
-        // this.appendChild(enemigoImg);
         const button = document.createElement('button');
         button.textContent = 'Cambiar enemigo';
         button.classList.add("botonEstilo");

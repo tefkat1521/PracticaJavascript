@@ -4,26 +4,19 @@
     align-items: center;
     justify-content: center;
     height: 80vh;
-    /* Usando unidades de altura relativa */
     width: 80vw;
-    /* Usando unidades de ancho relativa */
     max-width: 800px;
     background-color: #ffcc80;
     background-image: url("../img/batalla1.png");
-    /* background-size: contain; */
     background-repeat: no-repeat;
     background-size: cover;
-    /* Amarillo claro */
     border: 3px solid #ff5722;
-    /* Naranja */
     border-radius: 30px;
     padding: 4vw;
-    /* Usando unidades de relleno relativas */
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
     overflow: hidden;
     cursor: url("../img/puntero1.png")16 16, auto;
     user-select: none;
-    /* Estándar*/
 }
 
 #enemigo {
@@ -38,28 +31,19 @@
 #puntuacion {
     position: fixed;
     top: 2em;
-    /* Usando unidades de altura relativa */
     right: 2em;
-    /* Usando unidades de ancho relativa */
     background-color: #64b5f6;
-    /* Azul claro */
     color: #fff;
     padding: 1em 1em;
-    /* Usando unidades de relleno relativas */
     border-radius: 15px;
-    /* Usando unidades de tamaño de fuente relativas */
 }
 
 #cambio {
     position: fixed;
     top: 8em;
-    /* Usando unidades de altura relativa */
     right: 1em;
-    /* Usando unidades de ancho relativa */
     background-color: #64b5f6;
-    /* Azul claro */
     color: #fff;
-    /* Usando unidades de relleno relativas */
     border-radius: 15px;
 }
 
